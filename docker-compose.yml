@@ -1,0 +1,14 @@
+
+# database
+mysql:
+  build: ./image/mysql
+  ports:
+    # Allow client to access 3306
+    - "3306:3306"
+  volumes:
+    # NOTE: your data will be stored in ./mysql
+    - ./mysql_data:/var/lib/mysql
+    - /etc/localtime:/etc/localtime:ro
+
+  environment:
+    - MYSQL_ROOT_PASSWORD=mysql@weijie
